@@ -26,7 +26,7 @@ const LoginScreen = ({navigation}: Props) => {
       <TextInput style={styles.input} placeholder="Ingrese Password" />
       <BouncyCheckbox
         style={styles.checkbox}
-        size={30}
+        size={20}
         fillColor="green"
         unfillColor="#FFFFFF"
         text="Estoy deacuerdo con la Politica de Privacidad, Acuerdo del Usuario y Politica de Privacidad Infantil"
@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     color: 'black',
+    marginHorizontal: 10,
   },
   input: {
     height: 40,
@@ -104,6 +105,7 @@ const styles = StyleSheet.create({
   },
   checkbox: {
     marginHorizontal: 20,
+    marginBottom: 20,
   },
   buttonContainer: {
     marginTop: 50,
