@@ -14,7 +14,7 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 interface Props extends NativeStackScreenProps<any, any> {}
 const RegisterScreen = ({navigation}: Props) => {
   const handleButtonPress = () => {
-    navigation.navigate('RegisterScreen');
+    navigation.navigate('PasswordScreen');
   };
   return (
     <SafeAreaView style={styles.container}>
