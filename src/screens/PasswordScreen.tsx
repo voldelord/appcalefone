@@ -13,7 +13,7 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 interface Props extends NativeStackScreenProps<any, any> {}
 const PasswordScreen = ({navigation}: Props) => {
   const handleButtonPress = () => {
-    navigation.navigate('DeviceHome');
+    navigation.navigate('DevicesHome'); // Cambia el nombre a 'HomeDevices'
   };
   return (
     <SafeAreaView style={styles.container}>
