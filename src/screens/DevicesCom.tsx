@@ -19,7 +19,7 @@ const DevicesCom = ({navigation}: Props) => {
         </Text>
       </View>
       <View style={styles.imagecontainer}>
-        <Image style={styles.image} source={require('../assets/2.png')} />
+        <Image style={styles.image} source={require('../assets/7.png')} />
       </View>
       <View style={styles.buttonContainer}>
         <CustomButton
