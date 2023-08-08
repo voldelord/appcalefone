@@ -21,11 +21,11 @@ export const Tabs = () => {
           if (route.name === 'HomeDevices') {
             iconName = focused ? 'home' : 'home-outline';
           } else if (route.name === 'AddDevices') {
-            iconName = focused ? 'add-circle' : 'add-circle-outline';
+            iconName = focused ? 'cog' : 'cog-outline';
           } else if (route.name === 'CollectionDevices') {
-            iconName = focused ? 'archive' : 'archive-outline';
+            iconName = focused ? 'leaf' : 'leaf-outline';
           } else if (route.name === 'KeyConfigDevices') {
-            iconName = focused ? 'key' : 'key-outline';
+            iconName = focused ? 'exit' : 'exit-outline';
           }
 
           return <Icon name={iconName} size={size} color={color} />;

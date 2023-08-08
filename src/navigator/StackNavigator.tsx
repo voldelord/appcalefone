@@ -6,6 +6,7 @@ import RegisterScreen from '../screens/RegisterScreen';
 import PasswordScreen from '../screens/PasswordScreen';
 import {Tabs} from './Tabs';
 import MyDevices from '../screens/MyDevices';
+import DevicesCom from '../screens/DevicesCom';
 const Stack = createNativeStackNavigator();
 
 export const StackNavigator = () => {
@@ -17,6 +18,7 @@ export const StackNavigator = () => {
       <Stack.Screen name="PasswordScreen" component={PasswordScreen} />
       <Stack.Screen name="MyDevices" component={MyDevices} />
       <Stack.Screen name="DevicesHome" component={Tabs} />
+      <Stack.Screen name="DevicesCom" component={DevicesCom} />
     </Stack.Navigator>
   );
 };
