@@ -7,6 +7,7 @@ import PasswordScreen from '../screens/PasswordScreen';
 import {Tabs} from './Tabs';
 import MyDevices from '../screens/MyDevices';
 import DevicesCom from '../screens/DevicesCom';
+import WirelessCom from '../screens/WirelessCom';
 const Stack = createNativeStackNavigator();
 
 export const StackNavigator = () => {
@@ -19,6 +20,7 @@ export const StackNavigator = () => {
       <Stack.Screen name="MyDevices" component={MyDevices} />
       <Stack.Screen name="DevicesHome" component={Tabs} />
       <Stack.Screen name="DevicesCom" component={DevicesCom} />
+      <Stack.Screen name="WirelessCom" component={WirelessCom} />
     </Stack.Navigator>
   );
 };

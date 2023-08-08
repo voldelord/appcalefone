@@ -26,7 +26,7 @@ const AddDevices = ({navigation}: Props) => {
           placeholderTextColor="black"
         />
       </View>
-      <View>
+      <View style={styles.buttonContainer}>
         <CustomButton
           label="Presionar"
           color="#B5206A"
@@ -61,5 +61,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#EAE9E9',
     marginBottom: 10,
     marginTop: 20,
+  },
+  buttonContainer: {
+    marginTop: 20,
+    padding: 30,
   },
 });
