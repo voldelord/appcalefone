@@ -18,11 +18,13 @@ import Home from '../screens/Home';
 import HomeDevices from '../screens/HomeDevices';
 import SearchDevice from '../screens/SearchDevice';
 import AddDevices from '../screens/AddDevices';
+import Modes from '../screens/Modes';
 const Stack = createNativeStackNavigator();
 
 export const StackNavigator = () => {
   return (
     <Stack.Navigator>
+     
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
@@ -37,9 +39,10 @@ export const StackNavigator = () => {
       <Stack.Screen name="Scenary" component={Scenary}/>
       <Stack.Screen name='NewScenary' component={NewScenary} />
       <Stack.Screen name='Scenarys' component={Scenarys} />
-      <Stack.Screen name= 'Home' component={Home}/>
       <Stack.Screen name='SearchDevice' component={SearchDevice} />
       <Stack.Screen name='AddDevices' component={AddDevices} />
+      <Stack.Screen name='Modes' component={Modes} />
+      <Stack.Screen name='Home' component={Tabs} />
     </Stack.Navigator>
   );
 };

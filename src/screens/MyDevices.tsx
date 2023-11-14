@@ -1,57 +1,48 @@
-import React from 'react';
-import {
-  View,
-  FlatList,
-  StyleSheet,
-  Image,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-} from 'react-native';
+import React, { useState } from "react";
+import { View, ScrollView, FlatList, Image, Text, StyleSheet, TouchableOpacity, SafeAreaView } from "react-native";
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-const data = [
-  {
-    id: '1',
-    imageUri: require('../assets/1.png'),
-    text: 'Panel Calefactor',
-  },
-  {id: '2', imageUri: require('../assets/2.png'), text: 'Panel Calefactor'},
-  {id: '3', imageUri: require('../assets/3.png'), text: 'Panel Calefactor'},
-  {id: '4', imageUri: require('../assets/4.png'), text: 'Panel Calefactor'},
-  {id: '5', imageUri: require('../assets/5.png'), text: 'Panel Calefactor'},
-  {id: '6', imageUri: require('../assets/6.png'), text: 'Panel Calefactor'},
-];
+interface Props extends NativeStackScreenProps<any, any> {}
 
-const numColumns = 3;
-
-const MyDevices = () => {
-  const renderItem = ({ item }) => (
-    <TouchableOpacity
-      style={styles.item}
-      onPress={() => {
-        // Aquí puedes manejar la acción al tocar la imagen si es necesario
-        console.log('Tocaste la imagen:', item.text);
-      }}>
-      <Image source={item.imageUri} style={styles.image} />
-      <Text style={styles.text}>{item.text}</Text>
-    </TouchableOpacity>
-  );
+const MyDevices = ({ navigation }: Props) => {
+  
+  const [data, setData] = useState([
+    {
+      name: "Dispositivo 1",
+      image: require("../assets/1.png"),
+    },
+    {
+      name: "Dispositivo 2",
+      image: require("../assets/2.png"),
+    },
+  ]);
+  const handleButtonPress = (screenName: string) => {
+    navigation.navigate(screenName);
+  };
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.textcontainer}>
-        <Text style={styles.texttitle}>Añadir Dispositivos</Text>
+      <View style={{ flex: 1 }}>
+        <ScrollView>
+          <FlatList
+            data={data}
+            renderItem={({ item }) => (
+              <TouchableOpacity
+                style={styles.itemContainer}
+                onPress={() => handleButtonPress('Modes')} // Cambia 'OtraPantalla' al nombre de la pantalla deseada
+              >
+                <Image source={item.image} style={styles.image} />
+                <Text>{item.name}</Text>
+              </TouchableOpacity>
+            )}
+            keyExtractor={(item, index) => index.toString()}
+            numColumns={2}
+          />
+        </ScrollView>
       </View>
-      <View>
-        <Text style={styles.textnamedevices}>Calefacción</Text>
+      <View style={styles.buttonContainer}>
+       
       </View>
-      <FlatList
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-        numColumns={numColumns}
-        columnWrapperStyle={styles.columnWrapper}
-      />
     </SafeAreaView>
   );
 };
@@ -59,46 +50,24 @@ const MyDevices = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: "white",
   },
-  item: {
-    backgroundColor: 'white',
-    padding: 20,
-    margin: 5,
+  itemContainer: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 200,
-    height: 200,
-  },
-  image: {
-    width: 100,
-    height: 150,
-  },
-  text: {
-    marginTop: 5,
-    fontWeight: 'bold',
-  },
-  textcontainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  texttitle: {
-    fontWeight: 'bold',
-    fontSize: 18,
-    color: 'black',
-    marginBottom: 80,
+    alignItems: "center",
+    justifyContent: "center",
+    margin: 10,
+    padding: 10,
     marginTop: 20,
   },
-  textnamedevices: {
-    fontWeight: 'bold',
-    fontSize: 20,
-    color: 'black',
-    marginBottom: 40,
-    marginLeft: 20,
+  buttonContainer: {
+    marginTop: 50,
+    padding: 30,
   },
-  columnWrapper: {
-    justifyContent: 'flex-start',
+  image: {
+    width: 40,
+    height: 100,
+    marginBottom: 10,
   },
 });
 

@@ -1,10 +1,8 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import AddDevices from '../screens/AddDevices';
-import Calefon from '../screens/Calefon';
-import KeyConfigDevices from '../screens/KeyConfigDevices';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Home from '../screens/Home';
+import UserProfile from '../screens/UserProfile';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,7 +22,7 @@ export const Tabs = () => {
             iconName = focused ? 'cog' : 'cog-outline';
           } else if (route.name === 'Calefon') {
             iconName = focused ? 'leaf' : 'leaf-outline';
-          } else if (route.name === 'KeyConfigDevices') {
+          } else if (route.name === 'UserProfile') {
             iconName = focused ? 'exit' : 'exit-outline';
           }
 
@@ -35,6 +33,7 @@ export const Tabs = () => {
         tabBarStyle: {display: 'flex'}, // Puedes ajustar otros estilos aquí
       })}>
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="UserProfile" component={UserProfile} />
      
     </Tab.Navigator>
   );
