@@ -16,7 +16,7 @@ function CustomModal() {
 
   const handleContinue = () => {
     toggleModal(); // Oculta el modal
-    navigation.navigate('MyDevices'); // Navega a la otra página
+    navigation.navigate('SearchDevice'); // Navega a la otra página
   };
 
   return (

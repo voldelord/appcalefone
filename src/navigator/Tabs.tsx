@@ -1,10 +1,10 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import HomeDevices from '../screens/HomeDevices';
 import AddDevices from '../screens/AddDevices';
 import Calefon from '../screens/Calefon';
 import KeyConfigDevices from '../screens/KeyConfigDevices';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Home from '../screens/Home';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,7 +18,7 @@ export const Tabs = () => {
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
 
-          if (route.name === 'HomeDevices') {
+          if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home-outline';
           } else if (route.name === 'AddDevices') {
             iconName = focused ? 'cog' : 'cog-outline';
@@ -34,10 +34,8 @@ export const Tabs = () => {
         tabBarInactiveTintColor: 'gray',
         tabBarStyle: {display: 'flex'}, // Puedes ajustar otros estilos aquí
       })}>
-      <Tab.Screen name="HomeDevices" component={HomeDevices} />
-      <Tab.Screen name="AddDevices" component={AddDevices} />
-      <Tab.Screen name="Calefon" component={Calefon} />
-      <Tab.Screen name="KeyConfigDevices" component={KeyConfigDevices} />
+      <Tab.Screen name="Home" component={Home} />
+     
     </Tab.Navigator>
   );
 };

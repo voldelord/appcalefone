@@ -24,12 +24,14 @@
     "react-native-gesture-handler": "^2.12.1",
     "react-native-modal": "^13.0.1",
     "react-native-modalize": "^2.1.1",
+    "react-native-permissions": "^3.10.1",
     "react-native-radial-slider": "^1.0.0",
     "react-native-safe-area-context": "^3.4.1",
     "react-native-screens": "^3.23.0",
     "react-native-svg": "^12.5.1",
     "react-native-toggle-element": "^2.0.1",
-    "react-native-vector-icons": "^10.0.0"
+    "react-native-vector-icons": "^10.0.0",
+    "react-native-wifi-reborn": "^4.10.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

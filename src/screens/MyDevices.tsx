@@ -6,7 +6,7 @@ import {
   Image,
   Text,
   SafeAreaView,
-  ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 
 const data = [
@@ -19,17 +19,22 @@ const data = [
   {id: '3', imageUri: require('../assets/3.png'), text: 'Panel Calefactor'},
   {id: '4', imageUri: require('../assets/4.png'), text: 'Panel Calefactor'},
   {id: '5', imageUri: require('../assets/5.png'), text: 'Panel Calefactor'},
-  {id: '5', imageUri: require('../assets/6.png'), text: 'Panel Calefactor'},
+  {id: '6', imageUri: require('../assets/6.png'), text: 'Panel Calefactor'},
 ];
 
 const numColumns = 3;
 
 const MyDevices = () => {
-  const renderItem = ({item}) => (
-    <View style={styles.item}>
+  const renderItem = ({ item }) => (
+    <TouchableOpacity
+      style={styles.item}
+      onPress={() => {
+        // Aquí puedes manejar la acción al tocar la imagen si es necesario
+        console.log('Tocaste la imagen:', item.text);
+      }}>
       <Image source={item.imageUri} style={styles.image} />
       <Text style={styles.text}>{item.text}</Text>
-    </View>
+    </TouchableOpacity>
   );
 
   return (
@@ -38,7 +43,7 @@ const MyDevices = () => {
         <Text style={styles.texttitle}>Añadir Dispositivos</Text>
       </View>
       <View>
-        <Text style={styles.textnamedevices}>Calefaccion</Text>
+        <Text style={styles.textnamedevices}>Calefacción</Text>
       </View>
       <FlatList
         data={data}

@@ -3,7 +3,7 @@ import {Text, View, SafeAreaView, StyleSheet, Image} from 'react-native';
 import CustomModal from '../components/CustomModal';
 const HomeDevices = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style= {styles.container}>
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}
@@ -23,6 +23,11 @@ const HomeDevices = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    justifyContent: 'center',
+  },
   image: {
     width: 200,
     height: 200,

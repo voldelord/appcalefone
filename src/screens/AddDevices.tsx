@@ -9,7 +9,7 @@ const AddDevices = ({navigation}: Props) => {
     navigation.navigate('DevicesCom');
   };
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <View>
         <Text style={styles.texttitle}>
           Introducir el codigo de configuracion del dispositivo matter
@@ -40,6 +40,11 @@ const AddDevices = ({navigation}: Props) => {
 export default AddDevices;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    justifyContent: 'center',
+  },
   texttitle: {
     fontWeight: 'bold',
     fontSize: 18,

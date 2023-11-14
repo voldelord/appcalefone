@@ -6,7 +6,7 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 interface Props extends NativeStackScreenProps<any, any> {}
 const DevicesCom = ({navigation}: Props) => {
   const handleButtonPress = () => {
-    navigation.navigate('WirelessCom');
+    navigation.navigate('MyDevices');
   };
   return (
     <SafeAreaView style={styles.container}>

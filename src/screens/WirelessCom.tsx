@@ -2,11 +2,13 @@ import {SafeAreaView, StyleSheet, Text, TextInput, View} from 'react-native';
 import React from 'react';
 import CustomButton from '../components/CustomButton';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-
+import WifiManager from 'react-native-wifi-reborn';
 interface Props extends NativeStackScreenProps<any, any> {}
 const WirelessCom = ({navigation}: Props) => {
   const handleButtonPress = () => {
-    navigation.navigate('MyDevices');
+    // Abrir configuración del Wi-Fi en dispositivos Android
+    WifiManager.forceWifiUsage(true);
+    WifiManager.setEnabled(true);
   };
   return (
     <SafeAreaView style={styles.container}>
