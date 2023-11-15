@@ -19,6 +19,7 @@ import HomeDevices from '../screens/HomeDevices';
 import SearchDevice from '../screens/SearchDevice';
 import AddDevices from '../screens/AddDevices';
 import Modes from '../screens/Modes';
+import ProfileEdit from '../screens/ProfileEdit';
 const Stack = createNativeStackNavigator();
 
 export const StackNavigator = () => {
@@ -43,6 +44,7 @@ export const StackNavigator = () => {
       <Stack.Screen name='AddDevices' component={AddDevices} />
       <Stack.Screen name='Modes' component={Modes} />
       <Stack.Screen name='Home' component={Tabs} />
+      <Stack.Screen name='ProfileEdit' component={ProfileEdit} />
     </Stack.Navigator>
   );
 };

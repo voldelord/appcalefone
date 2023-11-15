@@ -1,10 +1,10 @@
 import React from 'react';
-import { TouchableOpacity, Text, SafeAreaView, StyleSheet } from 'react-native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import {TouchableOpacity, Text, SafeAreaView, StyleSheet} from 'react-native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 interface Props extends NativeStackScreenProps<any, any> {}
 
-const Scenarys = ({ navigation }: Props) => {
+const Scenarys = ({navigation}: Props) => {
   const handleButtonPress = (screenName: string) => {
     navigation.navigate(screenName);
   };
@@ -13,8 +13,7 @@ const Scenarys = ({ navigation }: Props) => {
     <SafeAreaView style={styles.container}>
       <TouchableOpacity
         style={styles.buttonContainer}
-        onPress={() => handleButtonPress('HomeDevices')}
-      >
+        onPress={() => handleButtonPress('HomeDevices')}>
         <Text style={styles.buttonText}>Habitacion Principal</Text>
       </TouchableOpacity>
 

@@ -1,19 +1,27 @@
-import React, { useState } from "react";
-import { View, ScrollView, FlatList, Image, Text, StyleSheet, TouchableOpacity, SafeAreaView } from "react-native";
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import React, {useState} from 'react';
+import {
+  View,
+  ScrollView,
+  FlatList,
+  Image,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 interface Props extends NativeStackScreenProps<any, any> {}
 
-const MyDevices = ({ navigation }: Props) => {
-  
+const MyDevices = ({navigation}: Props) => {
   const [data, setData] = useState([
     {
-      name: "Dispositivo 1",
-      image: require("../assets/1.png"),
+      name: 'Dispositivo 1',
+      image: require('../assets/1.png'),
     },
     {
-      name: "Dispositivo 2",
-      image: require("../assets/2.png"),
+      name: 'Dispositivo 2',
+      image: require('../assets/2.png'),
     },
   ]);
   const handleButtonPress = (screenName: string) => {
@@ -22,11 +30,11 @@ const MyDevices = ({ navigation }: Props) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ flex: 1 }}>
+      <View style={{flex: 1}}>
         <ScrollView>
           <FlatList
             data={data}
-            renderItem={({ item }) => (
+            renderItem={({item}) => (
               <TouchableOpacity
                 style={styles.itemContainer}
                 onPress={() => handleButtonPress('Modes')} // Cambia 'OtraPantalla' al nombre de la pantalla deseada
@@ -40,9 +48,7 @@ const MyDevices = ({ navigation }: Props) => {
           />
         </ScrollView>
       </View>
-      <View style={styles.buttonContainer}>
-       
-      </View>
+      <View style={styles.buttonContainer}></View>
     </SafeAreaView>
   );
 };
@@ -50,12 +56,12 @@ const MyDevices = ({ navigation }: Props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: 'white',
   },
   itemContainer: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     margin: 10,
     padding: 10,
     marginTop: 20,

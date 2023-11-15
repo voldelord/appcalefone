@@ -3,7 +3,7 @@ import {Text, View, SafeAreaView, StyleSheet, Image} from 'react-native';
 import CustomModal from '../components/CustomModal';
 const HomeDevices = () => {
   return (
-    <SafeAreaView style= {styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.imageContainer}>
         <Image
           style={styles.image}

@@ -17,7 +17,7 @@ const Modes = ({navigation}: Props) => {
   };
 
   return (
-    <SafeAreaView style= {styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.containerbutton}>
         <TouchableOpacity
           style={styles.button}
@@ -81,7 +81,9 @@ const Modes = ({navigation}: Props) => {
           />
           <View style={styles.overlay} />
           <View style={styles.overlayText}>
-            <Text style={styles.buttonText}>Visualiza tu Ahorro de Energia</Text>
+            <Text style={styles.buttonText}>
+              Visualiza tu Ahorro de Energia
+            </Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -110,10 +112,10 @@ export default Modes;
 
 const styles = StyleSheet.create({
   container: {
-        flex: 1,
-        backgroundColor: 'white',
-        justifyContent: 'center',
-      },
+    flex: 1,
+    backgroundColor: 'white',
+    justifyContent: 'center',
+  },
   imageContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -137,7 +139,6 @@ const styles = StyleSheet.create({
   },
   button: {
     position: 'relative',
-    
   },
   imagebutton: {
     width: 350,
