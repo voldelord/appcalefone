@@ -20,12 +20,12 @@ import SearchDevice from '../screens/SearchDevice';
 import AddDevices from '../screens/AddDevices';
 import Modes from '../screens/Modes';
 import ProfileEdit from '../screens/ProfileEdit';
+import Notifications from '../screens/Notifications';
 const Stack = createNativeStackNavigator();
 
 export const StackNavigator = () => {
   return (
     <Stack.Navigator>
-     
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
@@ -35,16 +35,17 @@ export const StackNavigator = () => {
       <Stack.Screen name="DevicesCom" component={DevicesCom} />
       <Stack.Screen name="WirelessCom" component={WirelessCom} />
       <Stack.Screen name="CalefonRange" component={CalefonRange} />
-      <Stack.Screen name="NewHome" component={NewHome}/>
-      <Stack.Screen name="Homes" component={Homes}/>
-      <Stack.Screen name="Scenary" component={Scenary}/>
-      <Stack.Screen name='NewScenary' component={NewScenary} />
-      <Stack.Screen name='Scenarys' component={Scenarys} />
-      <Stack.Screen name='SearchDevice' component={SearchDevice} />
-      <Stack.Screen name='AddDevices' component={AddDevices} />
-      <Stack.Screen name='Modes' component={Modes} />
-      <Stack.Screen name='Home' component={Tabs} />
-      <Stack.Screen name='ProfileEdit' component={ProfileEdit} />
+      <Stack.Screen name="NewHome" component={NewHome} />
+      <Stack.Screen name="Homes" component={Homes} />
+      <Stack.Screen name="Scenary" component={Scenary} />
+      <Stack.Screen name="NewScenary" component={NewScenary} />
+      <Stack.Screen name="Scenarys" component={Scenarys} />
+      <Stack.Screen name="SearchDevice" component={SearchDevice} />
+      <Stack.Screen name="AddDevices" component={AddDevices} />
+      <Stack.Screen name="Modes" component={Modes} />
+      <Stack.Screen name="Home" component={Tabs} />
+      <Stack.Screen name="ProfileEdit" component={ProfileEdit} />
+      <Stack.Screen name="Notifications" component={Notifications} />
     </Stack.Navigator>
   );
 };

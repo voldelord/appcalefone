@@ -21,7 +21,11 @@ const UserProfile = ({navigation}) => {
   };
 
   const handleLogout = () => {
-    console.log('Logout');
+    navigation.navigate('HomeScreen', {user});
+  };
+
+  const handleNotifications = () => {
+    navigation.navigate('Notifications', {user});
   };
 
   const handleSecurity = () => {
@@ -44,6 +48,11 @@ const UserProfile = ({navigation}) => {
         <Text style={styles.buttonText}>Seguridad</Text>
       </TouchableOpacity>
 
+      <TouchableOpacity style={styles.button} onPress={handleNotifications}>
+        <Icon name="bell" size={30} color="black" />
+        <Text style={styles.buttonText}>Notificaciones</Text>
+      </TouchableOpacity>
+
       <TouchableOpacity style={styles.button} onPress={handleLogout}>
         <Icon name="sign-out" size={30} color="black" />
         <Text style={styles.buttonText}>Cerrar Sesión</Text>
@@ -54,8 +63,10 @@ const UserProfile = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#ffffff',
   },
 
   profileImage: {

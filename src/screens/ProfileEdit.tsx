@@ -1,20 +1,23 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, Button, Image, StyleSheet} from 'react-native';
+import {View, TextInput, Image, StyleSheet} from 'react-native';
 import CustomButton from '../components/CustomButton';
+import PhoneNumberInput from 'react-native-phone-number-input';
 
 const ProfileEdit = ({route, navigation}) => {
   const [editedUser, setEditedUser] = useState(route.params.user);
+  const [formattedValue, setFormattedValue] = useState('');
 
   const handleSave = () => {
     console.log('Información del usuario editada:', editedUser);
     navigation.goBack();
   };
+
   const handleButtonPress = () => {
-    navigation.navigate('Home'); // Cambia el nombre a 'HomeDevices'
+    navigation.navigate('Notifications'); // Cambia el nombre a 'HomeDevices'
   };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Editar Perfil</Text>
       <Image source={editedUser.profileImage} style={styles.profileImage} />
 
       <TextInput
@@ -26,31 +29,32 @@ const ProfileEdit = ({route, navigation}) => {
 
       <TextInput
         style={styles.input}
-        placeholder="Nuevo nombre de usuario"
-        value={editedUser.username}
-        onChangeText={text => setEditedUser({...editedUser, username: text})}
-      />
-
-      <TextInput
-        style={styles.input}
         placeholder="Nuevo email"
         value={editedUser.email}
         onChangeText={text => setEditedUser({...editedUser, email: text})}
       />
-
       <TextInput
         style={styles.input}
-        placeholder="Nuevo nombre de usuario"
-        value={editedUser.username}
-        onChangeText={text => setEditedUser({...editedUser, username: text})}
+        placeholder="Fecha de Nacimiento"
+        value={editedUser.date}
+        onChangeText={date => setEditedUser({...editedUser, date: date})}
       />
-
       <TextInput
         style={styles.input}
-        placeholder="Nuevo email"
-        value={editedUser.email}
-        onChangeText={text => setEditedUser({...editedUser, email: text})}
+        placeholder="Fecha de Nacimiento"
+        value={editedUser.date}
+        onChangeText={date => setEditedUser({...editedUser, date: date})}
       />
+
+      <PhoneNumberInput
+        defaultCode="US" // Cambia al código de país predeterminado deseado
+        placeholder="Nuevo Teléfono"
+        value={formattedValue}
+        onChangeFormattedText={text => setFormattedValue(text)}
+        textContainerStyle={styles.phoneInputContainer}
+        textInputStyle={styles.phoneInputText}
+      />
+
       <View style={styles.buttonContainer}>
         <CustomButton
           label="Guardar Cambios"
@@ -69,10 +73,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'white',
   },
-  text: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
+
   profileImage: {
     width: 150,
     height: 150,
@@ -91,6 +92,20 @@ const styles = StyleSheet.create({
   buttonContainer: {
     marginTop: 20,
     padding: 30,
+  },
+  phoneInputContainer: {
+    height: 40,
+    width: '20%',
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginVertical: 10,
+    paddingHorizontal: 10,
+    borderRadius: 15,
+  },
+
+  phoneInputText: {
+    fontSize: 16, // Ajusta el tamaño del texto según tu preferencia
+    // Otros estilos de texto si es necesario
   },
 });
 
